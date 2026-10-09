@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <h1>College Registration</h1>
+  <p class="subtitle">Admissions open · Academic year 2026–27</p>
+
+  <form id="regForm">
+
+    <fieldset>
+      <legend>1. Personal details</legend>
+
+      <label><span class="icon">👤</span> Full name</label>
+      <input type="text" id="name" placeholder="As per official records">
+      <span class="error" id="nameError"></span>
+
+      <label><span class="icon">📅</span> Date of birth</label>
+      <input type="date" id="dob">
+      <span class="error" id="dobError"></span>
+
+      <label><span class="icon">👥</span> Gender</label>
+      <div class="radio-row">
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Other"> Other</label>
+      </div>
+      <span class="error" id="genderError"></span>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Contact</legend>
+
+      <label><span class="icon">✉️</span> Email</label>
+      <input type="text" id="email" placeholder="you@example.com">
+      <span class="error" id="emailError"></span>
+
+      <label><span class="icon">📱</span> Mobile number</label>
+      <input type="text" id="phone" maxlength="10" placeholder="10-digit number">
+      <span class="error" id="phoneError"></span>
+
+      <label><span class="icon">🏠</span> Address</label>
+      <textarea id="address" rows="3" placeholder="House no., street, city, pincode"></textarea>
+      <span class="error" id="addressError"></span>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Academic</legend>
+
+      <label><span class="icon">🎓</span> Course</label>
+      <select id="course">
+        <option value="">Select course</option>
+        <option>BSc IT</option>
+        <option>BSc CS</option>
+        <option>BCom</option>
+        <option>BMS</option>
+        <option>BA</option>
+      </select>
+      <span class="error" id="courseError"></span>
+
+      <label><span class="icon">📚</span> Year</label>
+      <select id="year">
+        <option value="">Select year</option>
+        <option>FY</option>
+        <option>SY</option>
+        <option>TY</option>
+      </select>
+      <span class="error" id="yearError"></span>
+
+      <label><span class="icon">📝</span> Previous exam percentage</label>
+      <input type="text" id="percent" placeholder="e.g. 78.5">
+      <span class="error" id="percentError"></span>
+    </fieldset>
+
+    <div class="confirm">
+      <input type="checkbox" id="agree">
+      <label for="agree">I confirm the details above are correct.</label>
+    </div>
+    <span class="error" id="agreeError"></span>
+
+    <div class="buttons">
+      <button type="reset" class="btn-reset" id="resetBtn">Reset</button>
+      <button type="submit" class="btn-register">Submit registration</button>
+    </div>
+  </form>
+
+  <h2>Registered students <span class="count" id="count">0</span></h2>
+  <table>
+    <thead>
+      <tr><th>Reg. ID</th><th>Name</th><th>Course</th><th>Year</th><th></th></tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+  <p class="empty" id="emptyMsg">No registrations yet</p>
+
+  <script src="script.js"></script>
+</body>
+</html>
